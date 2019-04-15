@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {root} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,8 @@ import {root} from 'rxjs/internal-compatibility';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  link = 'recipes';
+  onChangeLink(link: string) {
+    this.link = link;
+  }
 }
