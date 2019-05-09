@@ -4,11 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="link === 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="link === 'shopping-list'; else home"></app-shopping-list>
-      <ng-template #home>
-        <app-recipes *ngIf="link === 'home'" ></app-recipes>
-      </ng-template>
+     <router-outlet></router-outlet>
     </div>
   </div>
 </div>
