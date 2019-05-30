@@ -30,8 +30,12 @@
       <div class="row">
         <div class="col-xs-12">
           <button type="submit" class="btn btn-success btn-margin" [disabled]="!f.valid" >{{editMode ? 'Update': 'Add'}}</button>
-          <button type="button" class="btn btn-danger btn-margin" >Delete</button>
-          <button type="button" class="btn btn-primary btn-margin">Cancel</button>
+          <button 
+           *ngIf="editMode" 
+           type="button" 
+           class="btn btn-danger btn-margin" 
+           (click) = "deleteIngredint()" >Delete</button>
+          <button type="button" class="btn btn-primary btn-margin" (click)="onClear()">Cancel</button>
         </div>
       </div>
     </form>
