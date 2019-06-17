@@ -20,7 +20,7 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
+          this.id = +params.id;
           this.recipe = this.recipeServices.getRecipe(this.id);
         }
       );
@@ -28,6 +28,11 @@ export class RecipeDetailComponent implements OnInit {
   onRecipeEdit() {
     this.router.navigate(['edit'], {relativeTo: this.route});
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  }
+
+  onDeleteRecipe() {
+    this.recipeServices.deleteRecipe(this.id);
+    this.router.navigate(['recipes']);
   }
 
   toShoppingList() {

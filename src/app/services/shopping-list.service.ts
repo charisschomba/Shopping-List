@@ -10,24 +10,24 @@ export class ShoppingService {
     new Ingredients('milk', 20),
   ];
 
-  getIngredient = (index: number) => this.ingredients[index]
+  getIngredient = (index: number) => this.ingredients[index];
 
   getIngredients = () => this.ingredients.slice();
 
   addedIngredient = (ingredient: Ingredients) => {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());
-    }
+    };
 
   deleteIngredient(index: number) {
-    this.ingredients.splice(index, 1)
+    this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   addIngredients = (ingredients: Ingredients[]) => {
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
-  }
+  };
   updateIngredients(index: number, newIngredient: Ingredients) {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());

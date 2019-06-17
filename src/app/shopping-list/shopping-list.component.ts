@@ -7,11 +7,10 @@ import {Subscription} from 'rxjs';
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css'],
-  providers: [ShoppingService]
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredients[];
-  private subscription: Subscription
+  private subscription: Subscription;
   constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
