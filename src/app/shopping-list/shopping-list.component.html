@@ -2,11 +2,17 @@
   <div class="col-xs-10">
     <app-shopping-edit></app-shopping-edit>
     <hr>
+    <input
+      type="text"
+      [(ngModel)]="filterByPrice"
+      placeholder="filter by price"
+    >
+    <hr>
     <ul class="list-group">
       <a 
       class="list-group-item" 
       style="cursor: pointer" 
-      *ngFor="let ingredient of ingredients; let i = index "
+      *ngFor="let ingredient of ingredients | filter: filterByPrice: 'amount'; let i = index "
       (click)="onEditItem(i)"
       >
         {{ingredient.name}} <span>{{ingredient.amount}}</span>
